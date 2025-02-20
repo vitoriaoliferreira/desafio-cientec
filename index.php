@@ -23,9 +23,9 @@
     </form>
 
     <h2>Buscar Cidadão</h2>
-    <form action="" method="GET">
-        <label for="termo">Nome ou CPF:</label>
-        <input type="text" id="termo" name="termo" required placeholder="Digite o nome ou CPF">
+    <form action="busca.php" method="GET">
+        <label for="termo">Nome completo ou CPF:</label>
+        <input type="text" id="termo" name="termo" required placeholder="Digite o nome completo ou CPF">
         <button type="submit">Buscar</button>
     </form>
 </body>

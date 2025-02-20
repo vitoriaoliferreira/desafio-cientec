@@ -21,3 +21,9 @@ else {
     echo "CPF já cadastrado!";
 }
 ?>
+
+<div class="form-buttons">
+<form action="index.php" method="GET">
+        <button type="submit">Novo Cadastro</button>
+    </form>
+</div>
