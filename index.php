@@ -8,7 +8,7 @@
     <div class="header">
         <h2>Cadastro de Cidadãos Brasileiros</h2>
     </div>
-    <form method="post" action="cadastro.php" class="input_form">
+    <form method="POST" action="cadastro.php" class="input_form">
         <div class="input-group">
             <label>Nome Completo</label>
             <input type="text" name="nome" required placeholder="Digite o nome completo">
@@ -23,8 +23,10 @@
     </form>
 
     <h2>Buscar Cidadão</h2>
-    <form action="" method="get">
+    <form action="" method="GET">
         <label for="termo">Nome ou CPF:</label>
         <input type="text" id="termo" name="termo" required placeholder="Digite o nome ou CPF">
         <button type="submit">Buscar</button>
     </form>
+</body>
+</html>
