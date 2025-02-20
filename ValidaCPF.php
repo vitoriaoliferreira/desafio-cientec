@@ -1,21 +1,19 @@
 <?php
-function validaCPF($cpf){
-    $cpf = preg_replace('/\D/','',$cpf);
-
-    if (strlen($cpf) != 11 || preg_match('/^(\d)\1{10}$/', $cpf)) {
-        return false;
-    }
-
-    for ($i = 9; $i <11 ; $i++){
-        $d = 0;
-        for($j=0; $j<$i; $j++){
-            $d += $cpf[$j] * (($i + 1) - $j);
+class ValidaCPF {
+    public static function validar($cpf) {
+        $cpf = preg_replace('/\D/', '', $cpf);
+        if (strlen($cpf) != 11 || preg_match('/(\d)\1{10}/', $cpf)) return false;
+        
+        for ($t = 9; $t < 11; $t++) {
+            $d = 0;
+            for ($c = 0; $c < $t; $c++) {
+                $d += $cpf[$c] * (($t + 1) - $c);
+            }
+            $d = ((10 * $d) % 11) % 10;
+            if ($cpf[$c] != $d) return false;
         }
-        $d = ((10 * $d) % 11) % 10;
-        if ($cpf[$i] != $d){
-            return false;
-        }
+        
+        return true;
     }
-    return true;
 }
 ?>
