@@ -1,11 +1,13 @@
+<link rel="stylesheet" type="text/css" href="style.css">
 <?php
+
 
 require_once 'Processamento.php';
 
 $termo = $_GET['termo'];
-$termo = preg_replace('/\D/', '', $termo);
 $processamento = new Processamento();
 $resultados = $processamento->buscar($termo);
+
 
 //se houver resultados (ou seja, se o array nao estiver vazio)
 

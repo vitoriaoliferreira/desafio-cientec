@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="style.css">
 <?php
 
 require_once 'Processamento.php';

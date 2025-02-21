@@ -56,15 +56,8 @@ public function buscar($termo) {
      if (empty($termo)) {
         return $resultado;
     }
-    $termo_normalizado = preg_replace('/\D/', '', $termo);
-
     foreach ($dados as $registro) {
-        $cpf_normalizado = preg_replace('/\D/', '', $registro["cpf"]); // Normaliza CPF cadastrado
-
-        if (
-            (isset($registro["nome"]) && stripos($registro["nome"], $termo) !== false) || 
-            (isset($registro["cpf"]) && $cpf_normalizado === $termo_normalizado)
-        ) {
+        if (strpos(strtolower($registro["nome"]), strtolower($termo)) !== false || $registro["cpf"] === $termo) {
             $resultado[] = $registro;
         }
     }
