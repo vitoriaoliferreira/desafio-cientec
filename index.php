@@ -6,7 +6,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Formulário de Cadastro -->
         <div class="form-section">
             <div class="header">
                 <h2>Cadastro de Cidadãos Brasileiros</h2>
@@ -26,7 +25,6 @@
             </form>
         </div>
 
-        <!-- Formulário de Busca -->
         <div class="form-section">
             <h2>Buscar Cidadão</h2>
             <form action="busca.php" method="GET">

@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="style.css">
 <?php
 require_once "Cidadao.php";
 
@@ -51,19 +52,19 @@ return true;
 public function buscar($termo) {
     $dados = $this->lerDados();
     $resultado = [];
-
-     // se o termo estiver vazio, n faz a busca
-     if (empty($termo)) {
+    $termo = trim($termo);
+    if (empty($termo)) {
         return $resultado;
     }
+
     foreach ($dados as $registro) {
-        if (strpos(strtolower($registro["nome"]), strtolower($termo)) !== false || $registro["cpf"] === $termo) {
+        if (stripos($registro["nome"], $termo) !== false || $registro["cpf"] === $termo) {
             $resultado[] = $registro;
         }
     }
 
     return $resultado;
-}
+    }
 }
 
 ?>
